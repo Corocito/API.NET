@@ -38,8 +38,11 @@ public class WeatherForecastController : ControllerBase
     //Se inicia con la creación de los metodos HTTP
     //--------------------------------------------------------------------------------------------------------------------------------------------
 
+    //Las rutas de las URL se pueden cambiar, afectando el acceso al metodo HTTP
     //Metodo GET
     [HttpGet(Name = "GetWeatherForecast")]
+    [Route("Get/weatherForecast")]
+    [Route("[action]")]
     public IEnumerable<WeatherForecast> Get()
     {
         //Se elimina el metodo para crear la lista random ya que siempre estaba creando una nueva lista cada vez que se hacia una solicitud HTTP

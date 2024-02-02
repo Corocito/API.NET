@@ -20,6 +20,9 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+//Se agrega el Middleware creado despues del Middleware de autorización ya que ahi es donde se agregan los Middlewares personalizados
+//app.UseTimeMiddleware();
+
 app.MapControllers();
 
 app.Run();
