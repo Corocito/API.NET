@@ -41,8 +41,8 @@ public class WeatherForecastController : ControllerBase
     //Las rutas de las URL se pueden cambiar, afectando el acceso al metodo HTTP
     //Metodo GET
     [HttpGet(Name = "GetWeatherForecast")]
-    [Route("Get/weatherForecast")]
-    [Route("[action]")]
+    //[Route("Get/weatherForecast")]
+    //[Route("[action]")]
     public IEnumerable<WeatherForecast> Get()
     {
         //Se elimina el metodo para crear la lista random ya que siempre estaba creando una nueva lista cada vez que se hacia una solicitud HTTP
@@ -55,6 +55,9 @@ public class WeatherForecastController : ControllerBase
         // .ToArray();
 
         //El método GET se encarga de retornar los datos, por lo que solo se hace un return de la lista creada
+
+        //Uso del Logger
+        _logger.LogInformation("Se muestra la lista del WeatherForecast");
         return ListWeatherForecast;
     }
 
