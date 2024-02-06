@@ -6,6 +6,8 @@ namespace webapi;
 public class TareasContext: DbContext
 {
     public DbSet<Categoria> Categorias {get;set;}
+    //SE DEBE DE CREAR LA REFERENCIA A LA TABLA DE TAREAS
+    public DbSet<Tarea> Tareas {get; set;}
 
     public TareasContext(DbContextOptions<TareasContext> options) :base(options) { }
 
